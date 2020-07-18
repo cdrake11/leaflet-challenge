@@ -7,7 +7,7 @@ d3.json(Url, function(data) {
 
   createFeatures(data.features);
 });
-function createFeatures(earthquakeData) {
+function createFeatures(earthquakedata) {
   // Define a function we want to run for each feature in the features array
   function onEachFeature(feature, layer) {
     layer.bindPopup("<h3>" + feature.properties.place +
@@ -15,7 +15,7 @@ function createFeatures(earthquakeData) {
   }
   // Create a GeoJSON layer containing the features array on the earthquakeData object
   // Run the onEachFeature function once for each piece of data in the array
-  var earthquakes = L.geoJSON(earthquakeData, {
+  var earthquakes = L.geoJSON(earthquakedata, {
     onEachFeature: onEachFeature
   });
   // createMap function w/ earthquake
